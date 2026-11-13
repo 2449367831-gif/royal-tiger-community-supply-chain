@@ -1,0 +1,169 @@
+/* Guandata operational theme: shared typography and semantic colors. */
+:root {
+  --font: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Hiragino Sans GB", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+  --gy-rounded: "华康圆体 W7", "华康圆体W7", "DFYuan W7", var(--font);
+  --page: #fffbed;
+  --surface: #fff;
+  --surface-soft: #fef9f2;
+  --ink: #343a3f;
+  --muted: #697077;
+  --faint: #697077;
+  --line: #e8e2d6;
+  --line-strong: #c8c4b9;
+  --blue: #1a827f;
+  --navy: #352b26;
+  --navy-deep: #352b26;
+  --green: #24734f;
+  --red: #af3c35;
+  --warning: #805600;
+  --yellow: #e6b800;
+  --gy-title: #632c16;
+  --gy-gold: #e6b800;
+  --gy-chart-gold: #a67c00;
+  --gy-chart-peach: #a96635;
+  --gy-chart-rose: #ad5968;
+}
+html, body.inventory-page { background: var(--page); }
+body.inventory-page { color: var(--ink); font-family: var(--font); font-size: 14px; line-height: 1.6; }
+button, input, select, textarea { font-family: inherit; }
+button, a, input, select, summary, [tabindex] { outline-color: var(--blue); }
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, summary:focus-visible, [tabindex]:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
+.sidebar { background: #352b26; color: #e8ded3; }
+.sidebar-brand strong { font-family: var(--font); font-size: 19px; font-weight: 600; letter-spacing: 0; }
+.sidebar-brand span, .sidebar-footer { color: #c8bbb0; font-size: 12px; }
+.sidebar-footer { border-color: #55473d; }
+.side-nav .nav-group-title { color: #bfae9f; font-size: 13px; }
+.side-nav .side-link.nested { color: #e8ded3; font-size: 14px; font-weight: 500; }
+.side-nav .side-link.nested.is-active { color: #ffe680; }
+.nav-capsule { border-color: #fff4cd45; background: linear-gradient(115deg,#fff8e62e,#fff8e612 55%,#ffe6801f); }
+@media (hover:hover) and (pointer:fine) { .side-nav .side-link.nested:not(.is-active):hover { color: #fff5e9; background: #fff8e609; } }
+.topbar { background: #fff; border-color: var(--line); }
+.breadcrumbs, .sync-label, .heading-meta { color: var(--muted); font-size: 13px; }
+.breadcrumbs strong, .maker-credit { color: var(--gy-title); font-weight: 600; }
+.maker-credit { font-size: 14px; letter-spacing: .04em; border-color: var(--line); }
+.maker-accent { background: var(--gy-gold); box-shadow: none; }
+
+/* Same type scale on all three business pages. */
+:is(#liveInventory, #dailySales, #futureSales) .panel-title h1 { font: 600 24px/1.4 var(--font); color: var(--gy-title); letter-spacing: 0; }
+:is(#liveInventory, #dailySales, #futureSales) .panel-title > span,
+:is(#liveInventory, #dailySales, #futureSales) .heading-meta,
+:is(#liveInventory, #dailySales, #futureSales) .heading-meta strong { color: var(--muted); font-size: 12px; font-weight: 400; }
+:is(#liveInventory, #dailySales, #futureSales) .field label { color: var(--gy-title); font: 500 14px/1.5 var(--gy-rounded); }
+:is(#liveInventory, #dailySales, #futureSales) .field input,
+:is(#liveInventory, #dailySales, #futureSales) .field select { color: var(--ink); font-family: var(--gy-rounded); font-size: 14px; border-color: var(--line-strong); background: #fff; }
+:is(#liveInventory, #dailySales, #futureSales) input::placeholder { color: #747b80; }
+:is(#liveInventory, #dailySales, #futureSales) .secondary-button,
+:is(#liveInventory, #dailySales, #futureSales) .ghost-button,
+:is(#liveInventory, #dailySales, #futureSales) .primary-button { font: 500 14px/1.4 var(--font); border-radius: 6px; box-shadow: none; }
+.inventory-page .primary-button, #futureSales #futureExport { background: var(--blue); border-color: var(--blue); color: #fff; }
+.inventory-page .primary-button:hover, #futureSales #futureExport:hover { background: #126b68; border-color: #126b68; }
+:is(#liveInventory, #dailySales, #futureSales) .secondary-button,
+:is(#liveInventory, #dailySales, #futureSales) .ghost-button { color: #52615f; border-color: var(--line-strong); background: #fff; }
+:is(#liveInventory, #dailySales, #futureSales) .secondary-button:hover,
+:is(#liveInventory, #dailySales, #futureSales) .ghost-button:hover { color: #126b68; border-color: var(--blue); background: #eef7f5; }
+.inventory-workspace, #dailySales.sales-workspace { background: #fff; border: 2px solid var(--gy-gold); border-radius: 8px; box-shadow: none; overflow: hidden; }
+.inventory-workspace .panel-toolbar, #dailySales .panel-toolbar { background: var(--surface-soft); border-color: var(--line); }
+.inventory-basis, .inventory-scope, .sales-basis, .sales-method, .inventory-detail-note, .inventory-code, .movement-explanation, .movement-footer { color: var(--muted); }
+.inventory-page .table-footer { color: var(--muted); font-size: 13px; background: #fff; }
+.inventory-page .pagination select, .inventory-page .page-button { color: var(--ink); border-color: var(--line-strong); font-size: 13px; }
+.inventory-page .row-action { color: #126b68; font-size: 14px; font-weight: 500; }
+.inventory-page .row-action:hover { color: #0e5553; }
+
+/* Table variant: cream headers, quiet dividers, brown key values. */
+:is(.inventory-table, .sales-table, .movement-table) { font-family: var(--font); font-size: 14px; color: var(--ink); }
+:is(.inventory-table, .sales-table, .movement-table) th { background: #fcf8f1; color: var(--gy-title); font-size: 14px; font-weight: 600; border-bottom-color: #e1d2ae; }
+:is(.inventory-table, .sales-table, .movement-table) td { color: var(--ink); border-bottom-color: #eef0ed; }
+.inventory-table th:first-child { background: #fcf8f1; }
+.inventory-table td strong, .sales-table strong { color: var(--ink); font-size: 14px; font-weight: 500; }
+.inventory-table td small, .sales-table small, .sales-table th small, .sales-table .sales-sku-code, .sales-merge-count, .movement-table th small { color: var(--muted); font-family: var(--font); font-size: 12px; }
+.inventory-table tbody tr:nth-child(even) td, .sales-table tbody tr:nth-child(even), .movement-table tbody tr:nth-child(even) { background: #fffdf7; }
+.inventory-table tbody tr:hover td, .sales-table tbody tr:hover, .movement-table tbody tr:hover { background: #faf3e5; }
+.inventory-table td.inventory-highlight { background: #fff9e7; color: var(--gy-title); font-weight: 600; }
+.inventory-table th.inventory-highlight, .sales-table th.sales-estimate { background: #fff1c6; color: var(--gy-title); }
+.inventory-table tbody tr:hover td.inventory-highlight, .sales-table tbody tr:hover .sales-estimate { background: #fff0c6; }
+.sales-table .sales-estimate { background: #fff9e7; color: var(--gy-title); }
+.sales-table .sales-value { font-size: 16px; font-weight: 600; }
+.sales-table .sales-warehouse strong, .sales-owner { color: var(--gy-title); font-size: 14px; font-weight: 500; }
+.sales-owner.unassigned, .sales-table .sales-reference { color: var(--muted); }
+.inventory-table-shell, .sales-table-shell, .movement-table-shell { border-color: var(--line); scrollbar-color: #beb9ab #f8f6ef; }
+.sales-workspace { --sales-brown: #632c16; --sales-line: #e8e2d6; --sales-cream: #fcf8f1; }
+.sales-alert.warning { color: #a33029; background: #fff0ee; border-color: #e6beb9; }
+.sales-alert.tight, .sales-rule.peak { color: #805600; background: #fff6dd; border-color: #d9bd78; }
+.sales-alert.normal { color: #246c4b; background: #edf7f0; border-color: #b8d8c5; }
+.sales-alert.unknown, .sales-rule.unavailable { color: #626b70; background: #f2f4f3; border-color: #d8dcd9; }
+.sales-rule { color: #176c69; background: #edf7f5; border-color: #c0dcd5; }
+.sales-freshness, .sales-unmapped { color: #74531f; background: #fff9ea; border-color: #dfc888; }
+.sales-table tr[data-alert-state="warning"] .sales-alert-cell > small { color: #a33029; }
+.inventory-error { color: #a33029; background: #fff0ee; border-color: #e6beb9; }
+
+/* Forecast cards retain their existing layout and selection behavior. */
+#futureSales.inventory-workspace { background: transparent; border: 0; border-radius: 0; overflow: visible; }
+#futureSales .panel-toolbar { background: transparent; }
+#futureSales .future-intro, #futureSales .future-chart-header span, #futureSales .future-chart-picker > span { color: var(--muted); font-size: 13px; }
+#futureSales .future-tag { color: var(--gy-title); background: #fff1c6; border-color: #e6cf88; font-size: 12px; }
+#futureSales .future-filters, #futureSales .future-kpis article, #futureSales .future-chart-panel, #futureSales .future-principles { border: 2px solid var(--gy-gold); background: var(--surface-soft); border-radius: 8px; box-shadow: none; }
+#futureSales .future-kpis span { color: var(--gy-title); font: 500 13px/1.6 var(--gy-rounded); }
+#futureSales .future-kpis strong { color: var(--gy-title); font-family: var(--gy-rounded); font-size: 28px; font-weight: 600; letter-spacing: 0; }
+#futureSales .future-kpis small, #futureSales .future-kpis strong small { color: var(--muted); font-size: 12px; font-weight: 400; }
+#futureSales .future-kpis .future-risk { border-color: var(--gy-gold); }
+#futureSales .future-risk strong { color: #a33029; }
+#futureSales .future-chart-header h2, #futureSales .future-table-title h2, #futureSales .future-principles h2 { color: var(--gy-title); font: 600 16px/1.5 var(--font); }
+#futureSales .future-chart { color: var(--muted); background: #fff; border-radius: 6px; }
+#futureSales .future-chart svg { font-family: var(--font); }
+#futureSales .future-chart svg > text { fill: #697077; font-size: 11px; }
+#futureSales .future-chart svg > line { stroke: #e6e6e6; }
+#futureSales .future-point-label { fill: var(--gy-title); font-size: 13px; font-weight: 600; }
+#futureSales .future-legend-item { background: #fff6df; border: 1px solid #ecdfbb; border-radius: 6px; }
+#futureSales .future-legend-item span { color: var(--gy-title); font-size: 13px; }
+#futureSales .future-legend-item small, #futureSales .future-legend-item button { color: var(--muted); font-size: 12px; }
+#futureSales .future-legend-item button { font-size: 19px; }
+#futureSales .future-chart-picker summary, #futureSales .future-picker-popover, #futureSales .future-picker-popover > input { color: var(--ink); border-color: var(--line-strong); font-size: 14px; }
+#futureSales .future-chart-picker details[open] > summary { border-color: var(--blue); }
+#futureSales .future-chart-picker summary:focus-visible, #futureSales .future-chart-picker input:focus-visible, #futureSales .future-chart-button:focus-visible { outline-color: var(--blue); }
+#futureSales .future-picker-option:hover, #futureSales .future-picker-option:has(input:checked) { background: #edf7f5; }
+#futureSales .future-picker-option input { accent-color: var(--blue); }
+#futureSales .future-picker-option span { color: var(--ink); }
+#futureSales .future-picker-option small, #futureSales .future-picker-actions span { color: var(--muted); }
+#futureSales .future-picker-actions button { color: #126b68; }
+#futureSales .future-table-title { border: 2px solid var(--gy-gold); border-bottom: 0; background: var(--surface-soft); border-radius: 8px 8px 0 0; }
+#futureSales .future-table-title span { color: var(--muted); font-size: 12px; }
+#futureSales .future-table-shell { border-inline: 2px solid var(--gy-gold); border-top-color: var(--line); background: #fff; }
+#futureSales .future-table { font-size: 14px; }
+#futureSales .future-table th, #futureSales .future-table th:first-child, #futureSales .future-table th:nth-child(2) { background: #fcf8f1; color: var(--gy-title); font-weight: 600; border-bottom-color: #e1d2ae; }
+#futureSales .future-table td { color: var(--ink); border-bottom-color: #eef0ed; }
+#futureSales .future-table small, #futureSales .future-table summary { color: var(--muted); }
+#futureSales .future-table tbody tr:nth-child(even) td { background: #fffdf7; }
+#futureSales .future-table tr:hover td { background: #faf3e5; }
+#futureSales .future-table td.future-quantity { color: var(--ink); }
+#futureSales .future-table td:nth-last-child(4) { background: #fff9e7; color: var(--gy-title); }
+#futureSales .future-table td.future-gap-positive { color: #a33029; }
+#futureSales .future-chart-button { color: #176c69; border-color: #c0dcd5; background: #edf7f5; }
+#futureSales .future-chart-button[aria-pressed=true] { color: #125552; border-color: #69aaa3; background: #dcefea; }
+#futureSales > .table-footer { border: 2px solid var(--gy-gold); border-top: 0; border-radius: 0 0 8px 8px; color: var(--muted); }
+#futureSales .future-principles-intro, #futureSales .future-principles-grid p, #futureSales .future-method, #futureSales .future-validation { color: var(--muted); }
+#futureSales .future-principles-grid h3, #futureSales .future-method summary, #futureSales .future-validation strong { color: var(--gy-title); font-weight: 600; }
+#futureSales .future-principles-grid .future-principles-formula { color: #126b68; }
+#futureSales .future-validation, #futureSales .future-method { border-color: var(--line); }
+
+/* Detail dialog belongs to the same system. */
+.inventory-dialog { color: var(--ink); background: #fff; border: 2px solid var(--gy-gold); border-radius: 8px; font: 14px/1.6 var(--font); }
+.inventory-dialog .drawer-header { background: var(--surface-soft); border-color: var(--line); }
+.inventory-dialog .drawer-header h2, .inventory-dialog h3 { color: var(--gy-title); font-size: 18px; font-weight: 600; }
+.inventory-dialog .inventory-code, .movement-totals span, .movement-footer { color: var(--muted); font-size: 12px; }
+.inventory-dialog .movement-totals { background: var(--surface-soft); border-color: var(--line); }
+.inventory-dialog .movement-totals strong { color: var(--gy-title); font-size: 18px; font-weight: 600; }
+.inventory-dialog .secondary-button, .movement-actions select { color: #176c69; border-color: var(--line-strong); background: #fff; font-size: 14px; }
+.inventory-dialog .movement-explanation summary span { color: #126b68; }
+.inventory-formula { background: var(--surface-soft); }
+.inventory-formula-result strong { color: var(--gy-title); }
+@media (max-width:1200px) { #futureSales .future-kpis strong { font-size: 25px; } }
+@media (max-width:800px) {
+  :is(#liveInventory, #dailySales, #futureSales) .panel-title h1 { font-size: 22px; }
+  .maker-credit { font-size: 12px; }
+}
+@media (max-width:520px) {
+  #futureSales .future-kpis strong { font-size: 23px; }
+  :is(#liveInventory, #dailySales, #futureSales) .field label,
+  :is(#liveInventory, #dailySales, #futureSales) .field input,
+  :is(#liveInventory, #dailySales, #futureSales) .field select { font-size: 14px; }
+}

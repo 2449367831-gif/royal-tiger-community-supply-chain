@@ -1,0 +1,3 @@
+.toggle-field input:focus-visible + .toggle-track{outline:3px solid rgb(22 119 210 / .35);outline-offset:3px}
+.detail-drawer{overscroll-behavior:contain}
+.records-table th,.records-table td{text-wrap:pretty}

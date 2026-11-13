@@ -1,0 +1,600 @@
+{
+  "version": 3,
+  "mode": "explicit-excel-cloud-code",
+  "source": {
+    "file": "D:\\导出数据草稿D盘\\对应云仓_已匹配.xlsx",
+    "sheet": "Sheet1",
+    "sha256": "bfeebfdd3a3f79e0611e3510d93af7fbb5ddccf3c144411dc7842f1bf6e16571",
+    "imported_at": "2026-11-11T16:22:06+08:00"
+  },
+  "entries": [
+    {
+      "platform_warehouse": "包头1仓",
+      "cloud_code": "8336834",
+      "cloud_name": "多多买菜-包头云仓",
+      "excel_row": 2,
+      "group_name": "包头"
+    },
+    {
+      "platform_warehouse": "保定1仓",
+      "cloud_code": "8336980",
+      "cloud_name": "多多买菜-河北保定云仓",
+      "excel_row": 3,
+      "group_name": "保定"
+    },
+    {
+      "platform_warehouse": "北京通州1仓",
+      "cloud_code": "7043528",
+      "cloud_name": "多多买菜-北京云仓",
+      "excel_row": 4,
+      "group_name": "北京"
+    },
+    {
+      "platform_warehouse": "长春1仓",
+      "cloud_code": "6610906",
+      "cloud_name": "多多买菜-吉林长春云仓",
+      "excel_row": 5,
+      "group_name": "长春"
+    },
+    {
+      "platform_warehouse": "长沙开福1仓",
+      "cloud_code": "WMS000040",
+      "cloud_name": "多多买菜-长沙云仓",
+      "excel_row": 6,
+      "group_name": "长沙"
+    },
+    {
+      "platform_warehouse": "长沙开福2仓",
+      "cloud_code": "WMS000040",
+      "cloud_name": "多多买菜-长沙云仓",
+      "excel_row": 7,
+      "group_name": "长沙"
+    },
+    {
+      "platform_warehouse": "成都青白江1仓",
+      "cloud_code": "WMS000041",
+      "cloud_name": "多多买菜-四川成都云仓",
+      "excel_row": 8,
+      "group_name": "成都"
+    },
+    {
+      "platform_warehouse": "成都青白江2仓",
+      "cloud_code": "WMS000041",
+      "cloud_name": "多多买菜-四川成都云仓",
+      "excel_row": 9,
+      "group_name": "成都"
+    },
+    {
+      "platform_warehouse": "成都青白江3仓",
+      "cloud_code": "WMS000041",
+      "cloud_name": "多多买菜-四川成都云仓",
+      "excel_row": 10,
+      "group_name": "成都"
+    },
+    {
+      "platform_warehouse": "赤峰1仓",
+      "cloud_code": "9152627",
+      "cloud_name": "多多买菜-赤峰云仓",
+      "excel_row": 11,
+      "group_name": "赤峰"
+    },
+    {
+      "platform_warehouse": "大理1仓",
+      "cloud_code": "WMS000059",
+      "cloud_name": "多多买菜-大理云仓",
+      "excel_row": 12,
+      "group_name": "大理"
+    },
+    {
+      "platform_warehouse": "大连1仓",
+      "cloud_code": "5905794",
+      "cloud_name": "多多买菜-辽宁大连云仓",
+      "excel_row": 13,
+      "group_name": "大连"
+    },
+    {
+      "platform_warehouse": "大同1仓",
+      "cloud_code": "8495265",
+      "cloud_name": "多多买菜-新山西大同云仓",
+      "excel_row": 14,
+      "group_name": "大同"
+    },
+    {
+      "platform_warehouse": "德州齐河1仓",
+      "cloud_code": "8417898",
+      "cloud_name": "多多买菜-新济南云仓",
+      "excel_row": 15,
+      "group_name": "德州"
+    },
+    {
+      "platform_warehouse": "德州齐河2仓",
+      "cloud_code": "8417898",
+      "cloud_name": "多多买菜-新济南云仓",
+      "excel_row": 16,
+      "group_name": "德州"
+    },
+    {
+      "platform_warehouse": "东莞中心1仓",
+      "cloud_code": "WMS000338",
+      "cloud_name": "多多买菜-新东莞云仓",
+      "excel_row": 17,
+      "group_name": "东莞"
+    },
+    {
+      "platform_warehouse": "东莞中心2仓",
+      "cloud_code": "WMS000338",
+      "cloud_name": "多多买菜-新东莞云仓",
+      "excel_row": 18,
+      "group_name": "东莞"
+    },
+    {
+      "platform_warehouse": "佛山1仓",
+      "cloud_code": "WMS000028",
+      "cloud_name": "多多买菜-佛山云仓",
+      "excel_row": 19,
+      "group_name": "佛山 / 顺德"
+    },
+    {
+      "platform_warehouse": "佛山2仓",
+      "cloud_code": "WMS000028",
+      "cloud_name": "多多买菜-佛山云仓",
+      "excel_row": 20,
+      "group_name": "佛山 / 顺德"
+    },
+    {
+      "platform_warehouse": "赣州1仓",
+      "cloud_code": "8692193",
+      "cloud_name": "多多买菜-赣州云仓",
+      "excel_row": 21,
+      "group_name": "赣州"
+    },
+    {
+      "platform_warehouse": "贵阳1仓",
+      "cloud_code": "WMS000242",
+      "cloud_name": "多多买菜-贵州云仓",
+      "excel_row": 22,
+      "group_name": "贵阳"
+    },
+    {
+      "platform_warehouse": "贵阳2仓",
+      "cloud_code": "WMS000242",
+      "cloud_name": "多多买菜-贵州云仓",
+      "excel_row": 23,
+      "group_name": "贵阳"
+    },
+    {
+      "platform_warehouse": "哈尔滨1仓",
+      "cloud_code": "9477048",
+      "cloud_name": "多多买菜-新哈尔滨云仓",
+      "excel_row": 24,
+      "group_name": "哈尔滨"
+    },
+    {
+      "platform_warehouse": "海口1仓",
+      "cloud_code": "WMS000228",
+      "cloud_name": "多多买菜-海南云仓",
+      "excel_row": 25,
+      "group_name": "海口"
+    },
+    {
+      "platform_warehouse": "杭州中心1仓",
+      "cloud_code": "WMS000331",
+      "cloud_name": "多多买菜-新杭州云仓",
+      "excel_row": 26,
+      "group_name": "杭州"
+    },
+    {
+      "platform_warehouse": "杭州中心2仓",
+      "cloud_code": "WMS000331",
+      "cloud_name": "多多买菜-新杭州云仓",
+      "excel_row": 27,
+      "group_name": "杭州"
+    },
+    {
+      "platform_warehouse": "合肥1仓",
+      "cloud_code": "WMS000112",
+      "cloud_name": "多多买菜-合肥云仓",
+      "excel_row": 28,
+      "group_name": "合肥"
+    },
+    {
+      "platform_warehouse": "合肥2仓",
+      "cloud_code": "WMS000112",
+      "cloud_name": "多多买菜-合肥云仓",
+      "excel_row": 29,
+      "group_name": "合肥"
+    },
+    {
+      "platform_warehouse": "衡阳2仓",
+      "cloud_code": "9616774",
+      "cloud_name": "多多买菜-新衡阳云仓",
+      "excel_row": 30,
+      "group_name": "衡阳"
+    },
+    {
+      "platform_warehouse": "衡阳3仓",
+      "cloud_code": "9616774",
+      "cloud_name": "多多买菜-新衡阳云仓",
+      "excel_row": 31,
+      "group_name": "衡阳"
+    },
+    {
+      "platform_warehouse": "侯马1仓",
+      "cloud_code": "8336836",
+      "cloud_name": "多多买菜-山西侯马云仓",
+      "excel_row": 32,
+      "group_name": "侯马"
+    },
+    {
+      "platform_warehouse": "呼和浩特1仓",
+      "cloud_code": "9971403",
+      "cloud_name": "多多买菜-新呼和浩特云仓",
+      "excel_row": 33,
+      "group_name": "呼和浩特"
+    },
+    {
+      "platform_warehouse": "淮安1仓",
+      "cloud_code": "WMS000091",
+      "cloud_name": "多多买菜-新淮安云仓",
+      "excel_row": 34,
+      "group_name": "淮安"
+    },
+    {
+      "platform_warehouse": "惠州中心1仓",
+      "cloud_code": "WMS000339",
+      "cloud_name": "多多买菜-惠州云仓",
+      "excel_row": 35,
+      "group_name": "惠州"
+    },
+    {
+      "platform_warehouse": "惠州中心2仓",
+      "cloud_code": "WMS000339",
+      "cloud_name": "多多买菜-惠州云仓",
+      "excel_row": 36,
+      "group_name": "惠州"
+    },
+    {
+      "platform_warehouse": "济宁1仓",
+      "cloud_code": "8410164",
+      "cloud_name": "多多买菜-山东济宁云仓",
+      "excel_row": 37,
+      "group_name": "济宁"
+    },
+    {
+      "platform_warehouse": "佳木斯1仓",
+      "cloud_code": "8259326",
+      "cloud_name": "多多买菜-佳木斯云仓",
+      "excel_row": 38,
+      "group_name": "佳木斯"
+    },
+    {
+      "platform_warehouse": "揭阳中心1仓",
+      "cloud_code": "WMS000115",
+      "cloud_name": "多多买菜-揭阳云仓",
+      "excel_row": 39,
+      "group_name": "揭阳"
+    },
+    {
+      "platform_warehouse": "揭阳中心2仓",
+      "cloud_code": "WMS000115",
+      "cloud_name": "多多买菜-揭阳云仓",
+      "excel_row": 40,
+      "group_name": "揭阳"
+    },
+    {
+      "platform_warehouse": "金华1仓",
+      "cloud_code": "4935404",
+      "cloud_name": "多多买菜-浙江金华云仓",
+      "excel_row": 41,
+      "group_name": "金华"
+    },
+    {
+      "platform_warehouse": "荆州1仓",
+      "cloud_code": "3351803",
+      "cloud_name": "多多买菜-湖北荆州云仓",
+      "excel_row": 42,
+      "group_name": "荆州"
+    },
+    {
+      "platform_warehouse": "昆明1仓",
+      "cloud_code": "WMS000333",
+      "cloud_name": "多多买菜-昆明云仓",
+      "excel_row": 43,
+      "group_name": "昆明"
+    },
+    {
+      "platform_warehouse": "兰州1仓",
+      "cloud_code": "WMS000037",
+      "cloud_name": "多多买菜-甘肃云仓",
+      "excel_row": 44,
+      "group_name": "兰州"
+    },
+    {
+      "platform_warehouse": "茂名1仓",
+      "cloud_code": "WMS000332",
+      "cloud_name": "多多买菜-新茂名云仓",
+      "excel_row": 45,
+      "group_name": "茂名"
+    },
+    {
+      "platform_warehouse": "南昌2仓",
+      "cloud_code": "4289035",
+      "cloud_name": "多多买菜-江西南昌云仓",
+      "excel_row": 46,
+      "group_name": "南昌"
+    },
+    {
+      "platform_warehouse": "南昌3仓",
+      "cloud_code": "4289035",
+      "cloud_name": "多多买菜-江西南昌云仓",
+      "excel_row": 47,
+      "group_name": "南昌"
+    },
+    {
+      "platform_warehouse": "南充1仓",
+      "cloud_code": "8917598",
+      "cloud_name": "多多买菜-南充云仓",
+      "excel_row": 48,
+      "group_name": "南充"
+    },
+    {
+      "platform_warehouse": "南京1仓",
+      "cloud_code": "P025CSA-ST",
+      "cloud_name": "社区团购南京顺丰仓",
+      "excel_row": 49,
+      "group_name": "南京"
+    },
+    {
+      "platform_warehouse": "宁波1仓",
+      "cloud_code": "6560711",
+      "cloud_name": "多多买菜-浙江宁波云仓",
+      "excel_row": 50,
+      "group_name": "宁波"
+    },
+    {
+      "platform_warehouse": "齐齐哈尔1仓",
+      "cloud_code": "8253047",
+      "cloud_name": "多多买菜-齐齐哈尔云仓",
+      "excel_row": 51,
+      "group_name": "齐齐哈尔"
+    },
+    {
+      "platform_warehouse": "青岛2仓",
+      "cloud_code": "DDMC-XQDYC",
+      "cloud_name": "多多买菜-新青岛云仓",
+      "excel_row": 52,
+      "group_name": "青岛"
+    },
+    {
+      "platform_warehouse": "上海浦东1仓",
+      "cloud_code": "9702212",
+      "cloud_name": "多多买菜-新上海云仓",
+      "excel_row": 53,
+      "group_name": "上海"
+    },
+    {
+      "platform_warehouse": "上海浦东物流1仓",
+      "cloud_code": "9702212",
+      "cloud_name": "多多买菜-新上海云仓",
+      "excel_row": 54,
+      "group_name": "上海"
+    },
+    {
+      "platform_warehouse": "上饶1仓",
+      "cloud_code": "9504859",
+      "cloud_name": "多多买菜-上饶云仓",
+      "excel_row": 55,
+      "group_name": "上饶"
+    },
+    {
+      "platform_warehouse": "沈阳1仓",
+      "cloud_code": "5402911",
+      "cloud_name": "多多买菜-沈阳云仓",
+      "excel_row": 56,
+      "group_name": "沈阳"
+    },
+    {
+      "platform_warehouse": "石家庄1仓",
+      "cloud_code": "8336982",
+      "cloud_name": "多多买菜-河北石家庄云仓",
+      "excel_row": 57,
+      "group_name": "石家庄"
+    },
+    {
+      "platform_warehouse": "石家庄2仓",
+      "cloud_code": "8336982",
+      "cloud_name": "多多买菜-河北石家庄云仓",
+      "excel_row": 58,
+      "group_name": "石家庄"
+    },
+    {
+      "platform_warehouse": "顺德1仓",
+      "cloud_code": "WMS000028",
+      "cloud_name": "多多买菜-佛山云仓",
+      "excel_row": 59,
+      "group_name": "佛山 / 顺德"
+    },
+    {
+      "platform_warehouse": "顺德2仓",
+      "cloud_code": "WMS000028",
+      "cloud_name": "多多买菜-佛山云仓",
+      "excel_row": 60,
+      "group_name": "佛山 / 顺德"
+    },
+    {
+      "platform_warehouse": "苏州1仓",
+      "cloud_code": "WMS000236",
+      "cloud_name": "多多买菜-无锡云仓",
+      "excel_row": 61,
+      "group_name": "无锡 / 苏州"
+    },
+    {
+      "platform_warehouse": "太原1仓",
+      "cloud_code": "8308040",
+      "cloud_name": "多多买菜-山西晋中云仓",
+      "excel_row": 62,
+      "group_name": "太原"
+    },
+    {
+      "platform_warehouse": "唐山1仓",
+      "cloud_code": "8445743",
+      "cloud_name": "多多买菜-新河北唐山云仓",
+      "excel_row": 63,
+      "group_name": "唐山"
+    },
+    {
+      "platform_warehouse": "天津1仓",
+      "cloud_code": "WMS000295",
+      "cloud_name": "多多买菜-新天津云仓",
+      "excel_row": 64,
+      "group_name": "天津"
+    },
+    {
+      "platform_warehouse": "温州1仓",
+      "cloud_code": "3566718",
+      "cloud_name": "多多买菜-浙江温州云仓（多多）",
+      "excel_row": 65,
+      "group_name": "温州"
+    },
+    {
+      "platform_warehouse": "无锡1仓",
+      "cloud_code": "WMS000236",
+      "cloud_name": "多多买菜-无锡云仓",
+      "excel_row": 66,
+      "group_name": "无锡 / 苏州"
+    },
+    {
+      "platform_warehouse": "芜湖1仓",
+      "cloud_code": "3502548",
+      "cloud_name": "多多买菜-安徽芜湖云仓",
+      "excel_row": 67,
+      "group_name": "芜湖"
+    },
+    {
+      "platform_warehouse": "武汉1仓",
+      "cloud_code": "720737",
+      "cloud_name": "多多买菜-武汉梁子湖云仓",
+      "excel_row": 68,
+      "group_name": "武汉"
+    },
+    {
+      "platform_warehouse": "武汉2仓",
+      "cloud_code": "720737",
+      "cloud_name": "多多买菜-武汉梁子湖云仓",
+      "excel_row": 69,
+      "group_name": "武汉"
+    },
+    {
+      "platform_warehouse": "武汉3仓",
+      "cloud_code": "720737",
+      "cloud_name": "多多买菜-武汉梁子湖云仓",
+      "excel_row": 70,
+      "group_name": "武汉"
+    },
+    {
+      "platform_warehouse": "西安1仓",
+      "cloud_code": "8493433",
+      "cloud_name": "多多买菜-江应西安云仓",
+      "excel_row": 71,
+      "group_name": "西安"
+    },
+    {
+      "platform_warehouse": "西安2仓",
+      "cloud_code": "8493433",
+      "cloud_name": "多多买菜-江应西安云仓",
+      "excel_row": 72,
+      "group_name": "西安"
+    },
+    {
+      "platform_warehouse": "西安3仓",
+      "cloud_code": "8493433",
+      "cloud_name": "多多买菜-江应西安云仓",
+      "excel_row": 73,
+      "group_name": "西安"
+    },
+    {
+      "platform_warehouse": "襄阳1仓",
+      "cloud_code": "8454516",
+      "cloud_name": "多多买菜-湖北襄阳云仓",
+      "excel_row": 74,
+      "group_name": "襄阳"
+    },
+    {
+      "platform_warehouse": "徐州1仓",
+      "cloud_code": "8451956",
+      "cloud_name": "多多买菜-徐州云仓",
+      "excel_row": 75,
+      "group_name": "徐州"
+    },
+    {
+      "platform_warehouse": "烟台1仓",
+      "cloud_code": "WMS000026",
+      "cloud_name": "多多买菜-新烟台云仓",
+      "excel_row": 76,
+      "group_name": "烟台"
+    },
+    {
+      "platform_warehouse": "银川1仓",
+      "cloud_code": "WMS000036",
+      "cloud_name": "多多买菜-银川云仓",
+      "excel_row": 77,
+      "group_name": "银川"
+    },
+    {
+      "platform_warehouse": "榆林1仓",
+      "cloud_code": "WMS000060",
+      "cloud_name": "多多买菜-榆林云仓",
+      "excel_row": 78,
+      "group_name": "榆林"
+    },
+    {
+      "platform_warehouse": "郑州1仓",
+      "cloud_code": "WMS000293",
+      "cloud_name": "多多买菜-郑州云仓",
+      "excel_row": 79,
+      "group_name": "郑州"
+    },
+    {
+      "platform_warehouse": "郑州2仓",
+      "cloud_code": "WMS000293",
+      "cloud_name": "多多买菜-郑州云仓",
+      "excel_row": 80,
+      "group_name": "郑州"
+    },
+    {
+      "platform_warehouse": "中山1仓",
+      "cloud_code": "WMS000117",
+      "cloud_name": "多多买菜-中山云仓",
+      "excel_row": 81,
+      "group_name": "中山"
+    },
+    {
+      "platform_warehouse": "重庆1仓",
+      "cloud_code": "WMS000020",
+      "cloud_name": "多多买菜-重庆云仓",
+      "excel_row": 82,
+      "group_name": "重庆"
+    },
+    {
+      "platform_warehouse": "重庆3仓",
+      "cloud_code": "WMS000020",
+      "cloud_name": "多多买菜-重庆云仓",
+      "excel_row": 83,
+      "group_name": "重庆"
+    },
+    {
+      "platform_warehouse": "驻马店1仓",
+      "cloud_code": "WMS000336",
+      "cloud_name": "多多买菜-驻马店云仓",
+      "excel_row": 84,
+      "group_name": "驻马店"
+    },
+    {
+      "platform_warehouse": "自贡1仓",
+      "cloud_code": "WMS000058",
+      "cloud_name": "多多买菜-自贡云仓",
+      "excel_row": 85,
+      "group_name": "自贡"
+    }
+  ]
+}

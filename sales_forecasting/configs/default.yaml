@@ -1,0 +1,23 @@
+data:
+  sales_path: data/raw/sales_daily.csv
+  inventory_path: data/raw/inventory.csv
+  inbound_path: data/raw/inbound_shipments.csv
+forecast:
+  horizon_days: 7
+  min_train_days: 90
+  origin_step_days: 1
+  holdout_days: 28
+ensemble:
+  weight_window_days: 90
+  min_weight_samples: 20
+  lambda_reg: 0.05
+  update_days: 7
+  smoothing_rho: 0.7
+interval:
+  alpha: 0.05
+  min_residual_samples: 20
+models:
+  sarimax_maxiter: 60
+  lightgbm_estimators: 100
+output:
+  directory: artifacts/production

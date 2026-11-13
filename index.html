@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#eef1f4">
+  <title>供应链社团计划 · 皇家小虎</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./a11y.css">
+  <link rel="stylesheet" href="./brand-polish.css?v=20260911-3">
+  <link rel="stylesheet" href="./inventory-view.css?v=20261105-ledger-layout">
+  <link rel="stylesheet" href="./daily-sales-view.css?v=20261112-owners">
+  <link rel="stylesheet" href="./future-sales-view.css?v=20261113-method1">
+  <link rel="stylesheet" href="./future-sales-polish.css?v=20261113-glass1">
+  <link rel="stylesheet" href="./guandata-theme.css?v=20261113-gy2">
+</head>
+<body class="inventory-page">
+  <a class="skip-link" href="#mainContent">跳到主要内容</a>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="主导航">
+      <div class="sidebar-brand"><img src="./assets/tiger-avatar.jpg" width="42" height="42" alt="皇家小虎"><div><strong>皇家小虎</strong><span>供应链社团计划</span></div></div>
+      <nav class="side-nav" aria-label="当前模块"><div class="nav-group-title"><span class="nav-icon" aria-hidden="true">▤</span><span>业务模块</span></div><a class="side-link nested is-active" href="#inventory" data-app-module="inventory" aria-current="page">库存变动记录</a><a class="side-link nested" href="#daily-sales" data-app-module="daily-sales">每日预估销量</a><a class="side-link nested" href="#future-sales" data-app-module="future-sales">未来销量预估</a></nav>
+      <div class="sidebar-footer">库存查询：尚未查询</div>
+    </aside>
+    <div class="app-main">
+      <header class="topbar"><button class="mobile-menu" id="mobileMenu" type="button" aria-label="打开导航" aria-expanded="false">☰</button><div class="breadcrumbs"><span>供应链社团计划</span><span aria-hidden="true">/</span><strong>库存变动记录</strong></div><div class="topbar-actions"><span class="sync-label">尚未查询</span><span class="maker-credit"><span class="maker-accent" aria-hidden="true"></span><span>深蓝制作</span></span></div></header>
+      <main id="mainContent" class="content">
+        <section id="liveInventory" aria-labelledby="inventoryTitle">
+          <section class="inventory-workspace" aria-labelledby="inventoryTitle">
+            <div class="panel-toolbar"><div class="panel-title"><h1 id="inventoryTitle">当前库存</h1><span id="inventoryCount">尚未查询</span><span class="refresh-schedule" title="北京时间每天 09:00、13:00、17:00、21:00 自动刷新；保留手动刷新">09:00 起每4小时更新快照</span></div><div class="toolbar-actions"><div class="heading-meta"><span>快照数据时间</span><strong id="lastSync">尚未查询</strong></div><button id="inventoryRefresh" class="secondary-button" type="button" title="重新查询数据并更新服务器快照" disabled><span aria-hidden="true">↻</span>更新数据</button><button id="inventoryExport" class="secondary-button" type="button" disabled>导出 CSV</button></div></div>
+            <form id="inventoryFilters" class="inventory-filters" aria-label="库存查询条件">
+              <div class="field inventory-date-field"><label for="inventoryDate">库存日期</label><input id="inventoryDate" name="stock_date" type="date" required aria-describedby="inventoryBasis"></div>
+              <div class="field"><label for="inventoryWarehouse">仓库编号</label><input id="inventoryWarehouse" name="warehouse" list="inventoryWarehouses" placeholder="全部仓库" autocomplete="off" maxlength="10100"><datalist id="inventoryWarehouses"></datalist></div>
+              <div class="field"><label for="inventorySku">商品编号</label><input id="inventorySku" name="sku" placeholder="全部商品" autocomplete="off" maxlength="10100"></div>
+              <div class="filter-buttons"><button class="ghost-button" type="reset">重置</button><button class="primary-button" id="inventoryQuery" type="submit">查询库存</button></div>
+            </form>
+            <div id="inventoryBasis" class="inventory-basis" role="status">当日库存＝实时库存－待出库＋待入库；每天凌晨 03:30 固定存档。</div>
+            <div id="inventoryError" class="inventory-error" role="alert" hidden></div>
+            <div class="inventory-table-shell" tabindex="0" aria-label="当前库存表，可横向滚动" aria-busy="true">
+              <table class="inventory-table"><caption class="sr-only">每个仓库商品一行；今天按原库存公式查询，历史日期按在库日快照查询</caption><thead><tr><th scope="col">仓库编号</th><th scope="col">仓库名称</th><th scope="col">商品编号</th><th scope="col">商品名称</th><th scope="col" class="numeric inventory-highlight">库存数量</th><th scope="col">修改时间</th><th scope="col">操作</th></tr></thead><tbody id="inventoryBody"><tr><td colspan="7" class="inventory-empty">正在查询库存…</td></tr></tbody></table>
+            </div>
+            <div class="table-footer inventory-footer"><span id="inventoryStatus" role="status">正在连接数仓…</span><div class="pagination"><label class="sr-only" for="inventoryPageSize">每页记录数</label><select id="inventoryPageSize"><option value="25">25 条 / 页</option><option value="50">50 条 / 页</option><option value="100">100 条 / 页</option></select><span id="inventoryPageSummary">0 / 0</span><button id="inventoryPrev" class="page-button" type="button" aria-label="库存上一页" disabled>‹</button><button id="inventoryNext" class="page-button" type="button" aria-label="库存下一页" disabled>›</button></div></div>
+          </section>
+        </section>
+        <section id="dailySales" class="inventory-workspace sales-workspace" aria-labelledby="salesTitle" hidden>
+          <div class="panel-toolbar"><div class="panel-title"><h1 id="salesTitle">每日预估销量</h1><span id="salesCount">尚未查询</span><span class="refresh-schedule" title="北京时间09:00、13:00、17:00、21:00更新云仓库存并重算预警；预估和7日均销每天09:30补映射完成后更新一次">库存每4小时 · 销量每日</span></div><div class="toolbar-actions"><div class="heading-meta sales-update-times" title="北京时间的定时安排；实际成功取数时间可展开计算口径查看"><span>库存定时</span><strong id="salesInventorySchedule">09:00 / 13:00 / 17:00 / 21:00</strong><span>销量定时</span><strong id="salesDailySchedule">每日 09:30 补映射后</strong></div><button id="salesRefresh" class="secondary-button" type="button" title="更新云仓库存和预警；预估与7日均销当天只取数一次">更新数据</button><button id="salesExport" class="secondary-button" type="button" disabled>导出 CSV</button></div></div>
+          <form id="salesFilters" class="sales-filters" aria-label="销量筛选条件">
+            <div class="field"><label for="salesDate">业务日期</label><input id="salesDate" name="date" type="date" required></div>
+            <div class="field"><label for="salesWarehouse">仓库</label><input id="salesWarehouse" name="warehouse" list="salesWarehouses" placeholder="云仓或平台仓" autocomplete="off"><datalist id="salesWarehouses"></datalist></div>
+            <div class="field sales-sku-filter"><label for="salesSku">商品 / SKU</label><input id="salesSku" name="sku" placeholder="名称、内部编码或平台 SKU…" autocomplete="off" spellcheck="false"></div>
+            <div class="field"><label for="salesAlertState">预警状态</label><select id="salesAlertState" name="alert_state"><option value="">全部状态</option><option value="warning">红色 · 库存不足</option><option value="tight">黄色 · 库存紧张</option><option value="normal">绿色 · 正常销售</option></select></div>
+            <div class="field sales-owner-filter"><label for="salesOwner">负责人</label><select id="salesOwner" name="owner"><option value="">全部负责人</option></select></div>
+            <button id="salesReset" class="ghost-button" type="reset">重置</button><button class="primary-button" type="submit">查询销量</button>
+          </form>
+          <div id="salesFreshness" class="sales-freshness" role="status" hidden></div>
+          <details class="sales-method"><summary id="salesBasisSummary">计算口径与库存时间</summary><div id="salesBasis" class="sales-basis">按仓库＋内部 SKU 汇总，平台销量乘映射 ratio 换算；前7天满7天取日均，不足7天取单日最高销量。</div></details>
+          <details id="salesUnmapped" class="sales-unmapped" hidden><summary id="salesUnmappedSummary"></summary><div id="salesUnmappedBody"></div></details>
+          <div id="salesError" class="inventory-error" role="alert" hidden></div>
+          <div class="sales-table-shell" tabindex="0" aria-label="每日预估销量表，可滚动" aria-busy="false">
+            <table class="sales-table">
+              <caption class="sr-only">仓库、商品、云仓库存、当日预估、7日均销、预警、负责人。数量均为映射基础量，缺失显示横杠。</caption>
+              <colgroup><col class="sales-col-warehouse"><col class="sales-col-product"><col class="sales-col-stock"><col class="sales-col-estimate"><col class="sales-col-reference"><col class="sales-col-alert"><col class="sales-col-owner"></colgroup>
+              <thead><tr><th scope="col">仓库</th><th scope="col">商品</th><th scope="col" class="numeric">云仓库存<small id="salesStockBasis">滚动库存＋当前在途</small></th><th scope="col" class="numeric sales-estimate">当日预估</th><th scope="col" class="numeric">7日均销<small>不足7天取单日最高</small></th><th scope="col">预警</th><th scope="col">负责人</th></tr></thead>
+              <tbody id="salesBody"><tr><td colspan="7" class="inventory-empty">打开模块后查询最新销量</td></tr></tbody>
+            </table>
+          </div>
+          <div class="table-footer sales-footer"><span id="salesStatus" role="status">尚未查询</span><div class="pagination"><label class="sr-only" for="salesPageSize">每页记录数</label><select id="salesPageSize"><option value="25">25 条 / 页</option><option value="50">50 条 / 页</option><option value="100">100 条 / 页</option></select><span id="salesPageLabel">0 / 0</span><button id="salesPrev" class="page-button" type="button" aria-label="销量上一页" disabled>‹</button><button id="salesNext" class="page-button" type="button" aria-label="销量下一页" disabled>›</button></div></div>
+        </section>
+        <section id="futureSales" class="inventory-workspace future-workspace" aria-labelledby="futureTitle" hidden>
+          <div class="panel-toolbar"><div class="panel-title"><h1 id="futureTitle">未来销量预估</h1><span class="future-tag">未来 7 天</span></div><div class="toolbar-actions"><button id="futureReload" class="secondary-button" type="button">重新读取</button><button id="futureExport" class="secondary-button" type="button" disabled>导出 CSV</button></div></div>
+          <p class="future-intro">依据历史日销量组合预测，查看每日需求、预测区间与模型表现。</p>
+          <form id="futureFilters" class="future-filters" aria-label="未来销量筛选条件">
+            <div class="field"><label for="futureSource">数据来源</label><select id="futureSource"><option value="production">正式数据</option><option value="demo">演示数据 · 非业务销量</option></select></div>
+            <div class="field"><label for="futureOwner">负责人</label><select id="futureOwner"><option value="">全部负责人</option></select></div>
+            <div class="field"><label for="futureWarehouse">云仓</label><select id="futureWarehouse"><option value="">全部云仓</option></select></div>
+            <div class="field"><label for="futureSku">商品 / SKU</label><input id="futureSku" placeholder="输入名称或 SKU 编码" autocomplete="off"></div>
+            <div class="field"><label for="futureDay">预测日期</label><select id="futureDay"><option value="">全部 7 天</option></select></div>
+            <button class="ghost-button" type="reset">重置筛选</button>
+          </form>
+          <div id="futureError" class="inventory-error" role="alert" hidden></div>
+          <div class="future-kpis"><article><span>在售云仓 / SKU</span><strong id="futureSkuCount">—</strong><small>当前筛选范围</small></article><article><span>7日预测总量</span><strong id="futureTotal">—</strong><small>基础单位 · 数量保留0位小数</small></article><article><span>云仓库存（含在途）</span><strong id="futureStockTotal">—</strong><small>当前筛选商品 · 每个云仓SKU只计一次</small></article><article class="future-risk"><span>7日静态库存缺口</span><strong id="futureStockGap">—</strong><small>滚动库存＋在途 · 非采购量</small></article></div>
+          <div class="future-chart-panel"><div class="future-chart-header"><div><h2>未来需求走势</h2><span id="futureChartHint">可多选云仓 / SKU 对比走势，数量保留0位小数</span></div><div class="future-chart-picker"><span id="futureChartSkuLabel">走势商品（可多选）</span><details id="futureChartPicker"><summary id="futureChartSummary">请选择云仓 / SKU 查看走势</summary><div class="future-picker-popover"><label for="futureChartSearch" class="sr-only">搜索走势商品</label><input id="futureChartSearch" type="search" placeholder="搜索云仓、SKU 或商品名称" autocomplete="off"><div class="future-picker-actions"><span id="futureChartSelectionCount">已选 0 项</span><button id="futureChartClear" type="button">清空选择</button></div><div id="futureChartSku" role="group" aria-labelledby="futureChartSkuLabel"></div></div></details></div></div><div id="futureChartLegend" class="future-chart-legend" aria-label="已选走势商品"></div><div id="futureChart" class="future-chart" aria-live="polite">请选择云仓 / SKU 查看走势</div></div>
+          <div class="future-table-title"><h2>云仓 / SKU 预测明细</h2><span>7日静态缺口降序 · 数量保留0位小数</span></div>
+          <div class="future-table-shell" tabindex="0" aria-label="按仓库和SKU分类的未来销量预测表，可横向滚动"><table class="future-table"><thead id="futureHead"></thead><tbody id="futureBody"><tr><td class="inventory-empty">正在读取…</td></tr></tbody></table></div>
+          <div class="table-footer"><span id="futureStatus" role="status">尚未读取</span><div class="pagination"><span id="futurePageLabel">0 / 0</span><button id="futurePrev" class="page-button" aria-label="预测上一页" disabled>‹</button><button id="futureNext" class="page-button" aria-label="预测下一页" disabled>›</button></div></div>
+          <section class="future-principles" aria-labelledby="futurePrinciplesTitle">
+            <h2 id="futurePrinciplesTitle">预测原理</h2>
+            <p class="future-principles-intro">按“云仓＋SKU”整理历史日销量，由多个模型分别预测未来7天，再将可用结果加权组合。</p>
+            <div id="futureMethod" class="future-principles-grid">
+              <article><h3>1. 数据范围与历史门槛</h3><p>仅纳入已批准映射的云仓，商品范围取今日已抓取的在售清单。至少需要90个有效历史观测日，并具备昨日销量；历史不足或缺少昨日数据时，保留商品并显示原因，预测数量显示“—”。90天是初始训练门槛，训练窗口随后逐步扩展；当前历史抽取上限为180天。</p></article>
+              <article><h3>2. 四个模型分别预测</h3><p>SARIMAX识别销量延续和每周规律；Holt-Winters通过平滑估计趋势与周季节性；LightGBM结合历史滞后销量、近期均值、波动和日历信息；TSB估计间歇性销售的发生概率和单次销售量。各模型分别输出未来第1～7天的数量。</p></article>
+              <article><h3>3. 可用模型加权组合</h3><p class="future-principles-formula">当日预测数量＝各可用模型预测数量×对应权重，再求和</p><p>权重非负、合计为100%，不同预测天数可使用不同权重。已有独立回测记录的组合，按近90个日历日内已实现的样本外误差估计权重；新增组合暂用原回测样本的开发期先验权重。单个模型失败时，将其余模型权重重新归一化；全部失败时显示“—”。</p></article>
+              <article><h3>4. 防止使用未来数据</h3><p>训练特征和标签只使用预测起点及之前已知的数据。历史缺失日保留为空，不当作零销量；Holt-Winters遇缺日退出组合，其他模型按各自规则处理。预测反映已实现销量，尚未还原缺货损失，也未加入未来促销计划。</p></article>
+              <article><h3>5. 回测与预测区间</h3><p>回测按时间先后进行，以后续真实销量检验之前的预测。页面WMAPE和区间覆盖率仅对应原已回测的10个云仓／SKU，不代表全部商品；新增组合尚待独立回测，暂不提供校准区间。可用区间根据已实现的预测残差估计，名义95%不等于实际必然覆盖95%，预测效果也不作准确率保证。</p></article>
+              <article><h3>6. 数量展示与库存缺口</h3><p>模型内部保留小数，页面、折线标签及导出数量四舍五入到0位小数；7日合计先累加原始预测再取整，因此可能与逐日展示整数之和略有差异。滚动库存＝实物库存－待出库＋待入库；7日静态缺口＝max（0，完整7日预测合计－滚动库存－采购在途－调拨在途）。计入当前全部在途，不按预计到货日期拆分；库存或预测过期、数据不全时不计算，也不直接作为采购量。</p></article>
+            </div>
+            <div class="future-validation"><span>原回测样本 WMAPE<strong id="futureWmape">—</strong></span><span>原回测样本区间覆盖率<strong id="futureCoverage">—</strong></span><span>仅对应原已回测的10个云仓 / SKU</span></div>
+            <details class="future-method"><summary>查看本批次与回测明细</summary><div id="futureAudit"></div><div id="futureEvaluation"></div></details>
+          </section>
+        </section>
+      </main>
+    </div>
+  </div>
+  <dialog id="inventoryDetail" class="inventory-dialog" aria-labelledby="inventoryDetailTitle"><div class="drawer-header"><h2 id="inventoryDetailTitle">库存变动明细</h2><button class="icon-button" id="inventoryClose" aria-label="关闭库存详情" type="button">×</button></div><div id="inventoryDetailBody" class="drawer-body"></div></dialog>
+  <script src="./refresh-schedule.js?v=20261111-persisted-snapshots"></script>
+  <script src="./inventory-view.js?v=20261113-forecast"></script>
+  <script src="./daily-sales-owners.js?v=20261112-owners-huizhou"></script>
+  <script src="./daily-sales-view.js?v=20261113-forecast"></script>
+  <script src="./future-sales-view.js?v=20261113-gap-sort1"></script>
+  <script src="./navigation-glass.js?v=20261113-glass1"></script>
+</body>
+</html>
+
+
+
